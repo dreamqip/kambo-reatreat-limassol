@@ -1,13 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import OfferSection from "@/components/OfferSection";
+import SegmentationSection from "@/components/SegmentationSection";
+import WhatItIsSection from "@/components/WhatItIsSection";
+import WhySection from "@/components/WhySection";
+import ResultsSection from "@/components/ResultsSection";
+import WhoSection from "@/components/WhoSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen bg-background">
+      <HeroSection />
+      <div className="section-divider" />
+      <OfferSection />
+      <div className="section-divider" />
+      <SegmentationSection />
+      <div className="section-divider" />
+      <WhatItIsSection />
+      <div className="section-divider" />
+      <WhySection />
+      <div className="section-divider" />
+      <ResultsSection />
+      <div className="section-divider" />
+      <WhoSection />
+      <div className="section-divider" />
+      <ContactSection />
+    </main>
   );
 };
 
