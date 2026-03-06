@@ -94,7 +94,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "contact.success.text": "We'll reach out shortly.",
     "contact.social": "Hate filling out forms? Let's talk directly.",
     "contact.wa": "Message on WhatsApp",
+    "contact.wa.link": "https://wa.me/35797801393?text=Kambo",
     "contact.tg": "Message on Telegram",
+    "contact.tg.link": "https://t.me/Maestro_Curandero?text=Kambo",
     "contact.note": "I answer personally, no bots",
   },
   ru: {
@@ -182,7 +184,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "contact.success.text": "Мы свяжемся с вами в ближайшее время.",
     "contact.social": "Терпеть не можешь заполнять формы? Давай поговорим прямо.",
     "contact.wa": "Написать в WhatsApp",
+    "contact.wa.link": "https://wa.me/35797801393?text=Камбо",
     "contact.tg": "Написать в Telegram",
+    "contact.tg.link": "https://t.me/Maestro_Curandero?text=Камбо",
     "contact.note": "Отвечаю лично, без ботов",
   },
 };

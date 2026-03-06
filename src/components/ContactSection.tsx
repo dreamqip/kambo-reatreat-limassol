@@ -13,8 +13,8 @@ const ContactSection = () => {
     setSubmitted(true);
   };
 
-  const waLink = "https://wa.me/35799000000";
-  const tgLink = "https://t.me/kambocyprus";
+  const waLink = t("contact.wa.link");
+  const tgLink = t("contact.tg.link");
 
   return (
     <section id="apply" className="py-24 md:py-32 px-6">
