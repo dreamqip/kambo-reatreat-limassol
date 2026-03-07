@@ -98,6 +98,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "contact.tg": "Message on Telegram",
     "contact.tg.link": "https://t.me/Maestro_Curandero?text=Kambo",
     "contact.note": "I answer personally, no bots",
+    "contact.error": "Something went wrong. Please try again.",
+    "contact.submitting": "Submitting...",
   },
   ru: {
     // Hero
@@ -188,6 +190,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "contact.tg": "Написать в Telegram",
     "contact.tg.link": "https://t.me/Maestro_Curandero?text=Камбо",
     "contact.note": "Отвечаю лично, без ботов",
+    "contact.error": "Что-то пошло не так. Попробуйте ещё раз.",
+    "contact.submitting": "Отправка...",
   },
 };
 

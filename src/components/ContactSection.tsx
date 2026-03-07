@@ -6,11 +6,37 @@ const ContactSection = () => {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: "", telegram: "", goal: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.telegram.trim() || !form.goal.trim()) return;
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          phone: form.telegram.trim(),
+          goal: form.goal.trim(),
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error(t("contact.error"));
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(t("contact.error"));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const waLink = t("contact.wa.link");
@@ -83,11 +109,15 @@ const ContactSection = () => {
                   required
                 />
               </div>
+              {error && (
+                <p className="text-red-500 text-sm">{error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground font-heading font-semibold text-lg py-4 hover:brightness-110 transition-all border-glow"
+                disabled={submitting}
+                className="w-full bg-primary text-primary-foreground font-heading font-semibold text-lg py-4 hover:brightness-110 transition-all border-glow disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t("contact.submit")}
+                {submitting ? t("contact.submitting") : t("contact.submit")}
               </button>
             </form>
           )}
